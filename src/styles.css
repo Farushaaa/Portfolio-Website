@@ -1,0 +1,721 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+body {
+  scroll-behavior: smooth;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  background-color: black;
+  color: white;
+  position: relative;
+  cursor: none;
+}
+
+a {
+  cursor: none;
+}
+
+.cursor {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -2;
+  -webkit-backdrop-filter: grayscale(1);
+          backdrop-filter: grayscale(1);
+  transition: all 0.3s ease;
+  transition-property: background, transform;
+  transform-origin: 100% 100%;
+}
+
+.grow {
+  transform: scale(1.3);
+}
+
+.coloredMenu {
+  transform: scale(1.5);
+  background: white;
+}
+
+.navigation {
+  position: fixed;
+  padding-top: 20px;
+  width: 100%;
+}
+.navigation .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigation .container .brand {
+  margin-left: 4vh;
+  text-decoration: none;
+  color: #ffb7b2;
+  font-weight: 600;
+}
+.navigation .container .icons .menu {
+  width: 30px;
+  margin-right: 4vh;
+  stroke: white;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  padding-top: 0px;
+  justify-content: space-between;
+  min-height: 100vh;
+  z-index: -10;
+}
+.intro .text {
+  margin-left: 25vh;
+}
+.intro .text .hi {
+  font-size: 13px;
+  margin-bottom: 1vh;
+}
+.intro .text .name {
+  font-weight: 600;
+  font-size: 75px;
+  margin-bottom: 1vh;
+}
+.intro .text .who {
+  font-size: 15px;
+  margin-bottom: 2vh;
+  color: #ffb7b2;
+}
+.intro .text .description {
+  font-size: 11px;
+  color: #7c7c7c;
+}
+.intro .text .description .city {
+  color: white;
+}
+.intro .text .description .city a {
+  color: white;
+}
+.intro .text .button {
+  margin-top: 2vh;
+  background-color: #ffb7b2;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  text-align: center;
+  width: 120px;
+  border-radius: 30px;
+}
+.intro .text .button a {
+  text-decoration: none;
+  font-size: 11px;
+  color: black;
+  font-weight: 700;
+}
+.intro .text .button:hover {
+  background-color: white;
+  transition: 0.5s;
+}
+.intro .image {
+  width: 500px;
+  margin-right: 20vh;
+}
+.intro .image img {
+  width: 500px;
+  position: relative;
+  z-index: -3;
+}
+
+.upper {
+  font-size: 9px;
+  color: #7c7c7c;
+  padding-bottom: 1vh;
+}
+
+.blog {
+  padding-top: 16vh;
+  margin-left: 50vh;
+}
+.blog .descrip_section .desc {
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+}
+.blog .cards {
+  display: flex;
+  align-items: center;
+}
+.blog .cards .activites {
+  background: linear-gradient(180deg, #ffbcad 23.44%, #ffeba3 100%);
+}
+.blog .cards .education {
+  background: linear-gradient(180deg, #96e3fb 0%, #e5c5ff 65.1%);
+}
+.blog .cards .inspiration {
+  background: linear-gradient(180deg, #afa8ff 0%, #fab2c7 83.85%);
+}
+.blog .cards .card {
+  margin-top: 4vh;
+  width: 310px;
+  height: 315px;
+  text-align: center;
+  margin-right: 6vh;
+  position: relative;
+}
+.blog .cards .card svg {
+  float: right;
+  width: 21px;
+  margin-top: 1vh;
+  margin-right: 1vh;
+}
+.blog .cards .card .card_description {
+  text-align: center;
+  padding-top: 18vh;
+  color: black;
+}
+.blog .cards .card .card_description .name {
+  color: black;
+  font-weight: 700;
+  margin-bottom: 3vh;
+  font-size: 30px;
+}
+.blog .cards .card .card_description .name::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.blog .cards .card .card_description .text {
+  margin-top: 3vh;
+  font-size: 11px;
+  font-weight: 600;
+}
+.blog .cards .card:hover {
+  transform: translateY(5%);
+  transform: translateX(-5%);
+  transition: 0.5s;
+  background: black;
+  border: 1px solid white;
+}
+.blog .cards .card:hover .card_description {
+  color: white;
+}
+.blog .cards .card:hover .card_description .name {
+  color: white;
+}
+.blog .cards .card:hover svg path {
+  stroke: white;
+}
+
+.projects {
+  padding-top: 16vh;
+  margin-left: 50vh;
+}
+.projects .description_proj .desc_p {
+  font-size: 25px;
+  font-weight: 400;
+  color: white;
+}
+.projects .proj_cards {
+  display: flex;
+  align-items: center;
+}
+.projects .proj_cards .dice {
+  background: linear-gradient(180deg, #ffb39b 0%, #bfebee 100%);
+}
+.projects .proj_cards .number {
+  background: linear-gradient(180deg, #ac8fff 0%, #e6e6e6 100%);
+}
+.projects .proj_cards .proj {
+  margin-top: 4vh;
+  width: 310px;
+  height: 315px;
+  text-align: center;
+  margin-right: 6vh;
+  position: relative;
+}
+.projects .proj_cards .proj .icons {
+  display: flex;
+  float: right;
+  width: 20px;
+  margin-top: 1vh;
+  margin-right: 1vh;
+}
+.projects .proj_cards .proj .icons svg {
+  margin-left: 0.5vh;
+  width: 18px;
+}
+.projects .proj_cards .proj .card_description {
+  padding-top: 19vh;
+  color: black;
+}
+.projects .proj_cards .proj .card_description .name {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  margin-bottom: 3vh;
+  font-size: 27px;
+}
+.projects .proj_cards .proj .card_description .name::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.projects .proj_cards .proj .card_description .text {
+  font-size: 10px;
+  font-weight: 600;
+  margin-top: 3vh;
+}
+.projects .proj_cards .proj:hover {
+  transform: translateY(5%);
+  transform: translateX(-5%);
+  transition: 0.5s;
+  background: black;
+  border: 1px solid white;
+}
+.projects .proj_cards .proj:hover .card_description {
+  color: white;
+}
+.projects .proj_cards .proj:hover .card_description .name {
+  color: white;
+}
+.projects .proj_cards .proj:hover svg path {
+  stroke: white;
+}
+
+.footer {
+  margin-left: 25vh;
+  padding-top: 20vh;
+  padding-bottom: 10vh;
+  color: white;
+  height: 100vh;
+}
+.footer .ending {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .ending .last_text {
+  font-size: 50px;
+  font-weight: 600;
+}
+.footer .ending .link_icon {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30vh;
+}
+.footer .ending .link_icon .mail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1vh;
+  transition: all 0.5s ease;
+}
+.footer .ending .link_icon .mail img {
+  width: 23px;
+}
+.footer .ending .link_icon .mail:hover {
+  transform: scale(1.4);
+}
+.footer .ending .link_icon .insta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1vh;
+  transition: all 0.5s ease;
+}
+.footer .ending .link_icon .insta a img {
+  width: 23px;
+}
+.footer .ending .link_icon .insta a {
+  text-decoration: none;
+  color: white;
+}
+.footer .ending .link_icon .insta:hover {
+  transform: scale(1.4);
+}
+.footer .ending .link_icon .telegram {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1vh;
+  transition: all 0.5s ease;
+  margin-left: -2px;
+}
+.footer .ending .link_icon .telegram img {
+  width: 27px;
+}
+.footer .ending .link_icon .telegram:hover {
+  transform: scale(1.4);
+}
+.footer .ending .link_icon .github {
+  display: flex;
+  align-items: center;
+  margin-right: -0.1px;
+  margin-bottom: 1vh;
+  transition: all 0.5s ease;
+}
+.footer .ending .link_icon .github a img {
+  width: 19px;
+}
+.footer .ending .link_icon .github a {
+  text-decoration: none;
+  color: white;
+  margin-left: 4px;
+}
+.footer .ending .link_icon .github:hover {
+  transform: scale(1.4);
+}
+
+.hidden {
+  opacity: 0;
+  /*
+  filter: blur(5px);
+  transform: translateX(-100%);
+  */
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  /*
+  filter: blur(0);
+  transform: translateX(0);
+  */
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+.animation {
+  background: rgb(0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.animation .animation-text {
+  font-size: 2rem;
+  color: #ffffff;
+}
+.animation .animation-text .hide {
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+}
+.animation .animation-text .hide span {
+  transform: translateY(100%);
+  display: inline-block;
+}
+
+.slider {
+  background: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+}
+.slider h1 {
+  font-size: 3rem;
+}
+
+.menuPage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: linear-gradient(180deg, #cf9999 0%, #8e80c8 100%);
+  -webkit-animation: menuLoader 2s forwards;
+          animation: menuLoader 2s forwards;
+}
+.menuPage .menuTop .brand {
+  position: absolute;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  top: 28px;
+  left: 4vh;
+}
+.menuPage .menuTop .icons {
+  width: 45px;
+  height: 40px;
+}
+.menuPage .menuTop .icons .exit {
+  position: absolute;
+  width: 45px;
+  top: 14px;
+  left: 95.5rem;
+}
+.menuPage .web p {
+  position: absolute;
+  top: 15vh;
+  left: 20vh;
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+}
+.menuPage .web .icons .telega {
+  position: absolute;
+  top: 20vh;
+  left: 18vh;
+  transition: all 0.3s ease;
+}
+.menuPage .web .icons .insta {
+  position: absolute;
+  top: 20.4vh;
+  left: 24vh;
+  transition: all 0.3s ease;
+}
+.menuPage .web .icons .git {
+  position: absolute;
+  top: 20.6vh;
+  left: 30vh;
+  transition: all 0.3s ease;
+}
+.menuPage .web .icons .vk {
+  position: absolute;
+  top: 20.3vh;
+  left: 35vh;
+  transition: all 0.3s ease;
+}
+.menuPage .featured .text {
+  position: absolute;
+  top: 43%;
+  left: 42%;
+  color: black;
+  font-weight: 600;
+}
+.menuPage .featured .dice {
+  position: absolute;
+  width: 240px;
+  height: 245px;
+  top: 50%;
+  left: 34%;
+  background: linear-gradient(180deg, #ffffff 0%, #ababab 100%);
+  z-index: -2;
+}
+.menuPage .featured .dice .nameDice {
+  position: absolute;
+  color: black;
+  font-weight: 700;
+  font-size: 25px;
+  text-decoration: none;
+  top: 90px;
+  left: 44px;
+}
+.menuPage .featured .dice .nameDice::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.menuPage .featured .dice .desDice {
+  position: absolute;
+  color: black;
+  font-weight: 600;
+  left: 65px;
+  font-size: 10px;
+  top: 170px;
+}
+.menuPage .featured .dice .link svg {
+  width: 20px;
+  float: right;
+  margin-right: 1vh;
+  margin-top: 1vh;
+}
+.menuPage .featured .dice:hover {
+  transform: translateY(5%);
+  transform: translateX(-5%);
+  transition: 0.5s;
+  background: black;
+  border: 1px solid white;
+}
+.menuPage .featured .dice:hover .nameDice {
+  color: white;
+}
+.menuPage .featured .dice:hover .desDice {
+  color: white;
+}
+.menuPage .featured .dice:hover svg path {
+  stroke: white;
+}
+.menuPage .featured .guess {
+  position: absolute;
+  width: 240px;
+  height: 245px;
+  top: 50%;
+  left: 52%;
+  background: linear-gradient(180deg, #ffffff 0%, #ababab 100%);
+  z-index: -2;
+}
+.menuPage .featured .guess .nameGuess {
+  position: absolute;
+  color: black;
+  font-weight: 700;
+  font-size: 25px;
+  text-decoration: none;
+  top: 90px;
+  left: 30px;
+}
+.menuPage .featured .guess .nameGuess::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.menuPage .featured .guess .desGuess {
+  position: absolute;
+  color: black;
+  font-weight: 600;
+  left: 65px;
+  font-size: 10px;
+  top: 170px;
+}
+.menuPage .featured .guess .link svg {
+  width: 20px;
+  float: right;
+  margin-right: 1vh;
+  margin-top: 1vh;
+}
+.menuPage .featured .guess:hover {
+  transform: translateY(5%);
+  transform: translateX(-5%);
+  transition: 0.5s;
+  background: black;
+  border: 1px solid white;
+}
+.menuPage .featured .guess:hover .nameGuess {
+  color: white;
+}
+.menuPage .featured .guess:hover .desGuess {
+  color: white;
+}
+.menuPage .featured .guess:hover svg path {
+  stroke: white;
+}
+.menuPage .menuNav {
+  margin-left: 140vh;
+  margin-top: 15.5vh;
+}
+.menuPage .menuNav .name {
+  color: black;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.menuPage .menuNav .options {
+  margin-top: 2vh;
+  margin-left: 2vh;
+  display: flex;
+  flex-direction: column;
+}
+.menuPage .menuNav .options .home {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 2vh;
+  transition: all 0.3s ease;
+}
+.menuPage .menuNav .options .bloPro {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 2vh;
+  transition: all 0.3s ease;
+}
+.menuPage .menuNav .options .contacts {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 2vh;
+  transition: all 0.3s ease;
+}
+
+@-webkit-keyframes menuClose {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  to {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes menuClose {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  to {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+}
+@-webkit-keyframes menuLoader {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@keyframes menuLoader {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+.invisible {
+  display: none;
+}
+
+.menuClose {
+  -webkit-animation: menuClose 2s ease;
+          animation: menuClose 2s ease;
+}/*# sourceMappingURL=styles.css.map */
